@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="student" class="com.training.dependencyinjection.Student">
+		<property name="name" value="APJ Abdul Kalam" />
+		<property name="number" value="+905554443322" />
+		<property name="age" value="22" />
+		<property name="school">
+			<bean id="school" class="com.training.dependencyinjection.School">
+				<property name="schoolName" value="Government School"/>
+				<property name="address">
+					<bean id="address" class="com.training.dependencyinjection.Address">
+						<property name="city" value="Rameswaram"></property>
+						<property name="state" value="Tamil Nadu"></property>
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+</beans>
